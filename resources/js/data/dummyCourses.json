@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "category": "Mobile Development",
+        "title": "Belajar Flutter untuk Pemula",
+        "price": 299000,
+        "rating": 4.8,
+        "sold": 1200,
+        "videos": 35,
+        "status": "published"
+    },
+    {
+        "id": 2,
+        "category": "Website Development",
+        "title": "Membangun Website dengan Next.js",
+        "price": 349000,
+        "rating": 4.7,
+        "sold": 950,
+        "videos": 42,
+        "status": "published"
+    },
+    {
+        "id": 3,
+        "category": "UI/UX",
+        "title": "Fundamental Desain UI/UX untuk Pemula",
+        "price": 249000,
+        "rating": 4.5,
+        "sold": 800,
+        "videos": 28,
+        "status": "published"
+    },
+    {
+        "id": 4,
+        "category": "Data Science",
+        "title": "Machine Learning dengan Python",
+        "price": 399000,
+        "rating": 4.9,
+        "sold": 1400,
+        "videos": 50,
+        "status": "published"
+    },
+    {
+        "id": 5,
+        "category": "DevOps",
+        "title": "Dasar-dasar CI/CD dan Docker",
+        "price": 289000,
+        "rating": 4.6,
+        "sold": 670,
+        "videos": 30,
+        "status": "published"
+    }
+]

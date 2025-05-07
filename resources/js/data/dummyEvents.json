@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "type": "Webinar",
+        "title": "Belajar React dengan Santai",
+        "price": 50000,
+        "start_date": "2025-04-10",
+        "status": "active"
+    },
+    {
+        "id": 2,
+        "type": "Workshop",
+        "title": "Laravel x Tailwind",
+        "price": 75000,
+        "start_date": "2025-05-01",
+        "status": "inactive"
+    },
+    {
+        "id": 3,
+        "type": "Bootcamp",
+        "title": "Fullstack Dev dari Nol 1",
+        "price": 120000,
+        "start_date": "2025-06-01",
+        "status": "active"
+    },
+    {
+        "id": 4,
+        "type": "Bootcamp",
+        "title": "Fullstack Dev dari Nol 2",
+        "price": 120000,
+        "start_date": "2025-06-01",
+        "status": "active"
+    },
+    {
+        "id": 5,
+        "type": "Bootcamp",
+        "title": "Fullstack Dev dari Nol 3",
+        "price": 120000,
+        "start_date": "2025-06-01",
+        "status": "active"
+    },
+    {
+        "id": 6,
+        "type": "Bootcamp",
+        "title": "Fullstack Dev dari Nol 4",
+        "price": 120000,
+        "start_date": "2025-06-01",
+        "status": "active"
+    },
+    {
+        "id": 7,
+        "type": "Bootcamp",
+        "title": "Fullstack Dev dari Nol 5",
+        "price": 120000,
+        "start_date": "2025-06-01",
+        "status": "active"
+    }
+]

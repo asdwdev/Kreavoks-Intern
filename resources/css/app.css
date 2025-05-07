@@ -6,3 +6,70 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/* Override Blue Color */
+@theme {
+    --color-blue-50: #ECF3FD;
+    --color-blue-100: #C4D8F7;
+    --color-blue-200: #A7C6F4;
+    --color-blue-300: #7FABEE;
+    --color-blue-400: #669BEB;
+    --color-blue-500: #4082E6;
+    --color-blue-600: #3A76D1;
+    --color-blue-700: #2D5CA3;
+    --color-blue-800: #23487F;
+    --color-blue-900: #1B3761;
+}
+
+/* Infinite Scroll */
+@theme {
+    --animate-loop-scroll: loop-scroll 20s linear infinite;
+
+    @keyframes loop-scroll {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+    }
+}
+
+@theme {
+    --animate-scroll: scroll 10s linear infinite;
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0%);
+        }
+
+        100% {
+            transform: translateX(-33.333%);
+        }
+    }
+}
+
+/* Tambahkan di CSS global kamu, misal di globals.css */
+.mask-svg-fade {
+    mask-image: linear-gradient(to bottom, transparent 0%, black 60%, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 60%, black 80%, transparent 100%);
+}
+
+
+/* Sembunyikan scrollbar secara cross-browser */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.swiper-slide {
+    height: auto !important;
+    margin-bottom: 20px;
+}

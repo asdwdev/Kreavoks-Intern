@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "Joko Santoso",
+        "role": "Digital Marketer",
+        "title": "Membantu Bisnis Berkembang",
+        "message": "Kreavoks membantu bisnis kami dengan website profesional, mudah digunakan, dan meningkatkan jumlah pelanggan.",
+        "image": "/storage/images/testimonials/joko-santoso.png"
+    },
+    {
+        "id": 2,
+        "name": "Rina Maharani",
+        "role": "Founder of Craftholic",
+        "title": "Tampilan Website Jadi Lebih Menarik",
+        "message": "Desainnya clean dan modern banget. Banyak pelanggan baru yang tertarik karena tampilan websitenya menarik.",
+        "image": "/storage/images/testimonials/rina-maharani.png"
+    },
+    {
+        "id": 3,
+        "name": "Agus Pratama",
+        "role": "Freelance Programmer",
+        "title": "Cepat dan Responsif",
+        "message": "Layanan sangat responsif. Hasilnya cepat jadi dan langsung bisa saya gunakan untuk presentasi ke klien.",
+        "image": "/storage/images/testimonials/agus-pratama.png"
+    },
+    {
+        "id": 4,
+        "name": "Sinta Dewi",
+        "role": "UMKM Owner",
+        "title": "Naikkan Kepercayaan Pelanggan",
+        "message": "Setelah punya website, bisnis saya jadi lebih dipercaya pelanggan. Penjualan juga naik!",
+        "image": "/storage/images/testimonials/sinta-dewi.png"
+    },
+    {
+        "id": 5,
+        "name": "Yusuf Hidayat",
+        "role": "Online Course Creator",
+        "title": "Integrasi Fitur Sangat Mudah",
+        "message": "Fitur seperti pembayaran dan video player langsung terintegrasi. Memudahkan saya menjual kursus online.",
+        "image": "/storage/images/testimonials/yusuf-hidayat.png"
+    }
+]
