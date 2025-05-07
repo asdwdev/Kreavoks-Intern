@@ -73,7 +73,7 @@ export default function ServicePackageSection({ servicePackages }: Props) {
                     </Swiper>
                 </div>
             ) : (
-                <div className="grid grid-cols-3 gap-4 z-10 w-full lg:w-[90%] xl:w-[80%] 2xl:w-[70%]">
+                <div className="grid grid-cols-3 gap-6 z-10 w-full lg:w-[95%] xl:w-[90%] 2xl:w-[85%]">
                     {servicePackages[selectedCategory].map((paket, i) => (
                         <ServicePackageCard key={i} paket={paket} />
                     ))}

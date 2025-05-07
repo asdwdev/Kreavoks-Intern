@@ -30,7 +30,7 @@ export default function ServicePackageCard({ paket }: Props) {
                 {paket.description}
             </h3>
             <div className={`w-full h-[1px] my-0.5 ${isHighlight ? "bg-white/30" : "bg-gray-300"}`} />
-            <p className="text-center font-semibold text-xl my-2">
+            <p className="text-center font-bold text-2xl my-2">
                 {getDiscountedPrice(paket.price, paket.discount)}
             </p>
             <div className="inline-flex items-center justify-center gap-2">
