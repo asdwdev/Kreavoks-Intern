@@ -39,7 +39,7 @@ export default function ServicePackageSection({ servicePackages }: Props) {
                 Pilih Paket Jasa Layanan<br />Sesuai Kebutuhan Anda
             </p>
 
-            <div className="flex flex-row items-center justify-between gap-2 bg-white rounded-full p-1 z-10 mb-2 md:mb-4">
+            <div className="flex flex-row items-center justify-between gap-2 bg-white rounded-full p-1 z-10 mb-2 md:mb-8">
                 {(["Website", "Mobile App", "Design"] as const).map((item) => (
                     <button
                         key={item}

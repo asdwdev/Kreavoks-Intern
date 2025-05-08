@@ -20,7 +20,7 @@ export function Footer() {
                         <FaInstagram className="cursor-pointer hover:text-pink-500 transition-colors duration-300" size={18} />
                         <FaYoutube className="cursor-pointer hover:text-red-500 transition-colors duration-300" size={18} />
                     </div>
-                    <p className="text-sm">Kreavoks Digital Agency 2024</p>
+                    <p className="text-sm text-gray-500">Kreavoks Digital Agency since 2024</p>
                 </div>
 
                 {/* Address */}
@@ -86,7 +86,7 @@ export function Footer() {
                         />
                         <button
                             type="submit"
-                            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 rounded-full text-sm whitespace-nowrap"
+                            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 cursor-pointer rounded-full text-sm whitespace-nowrap"
                         >
                             Submit
                         </button>
@@ -95,8 +95,8 @@ export function Footer() {
             </div>
 
             {/* Footer Bottom */}
-            <div className="bg-blue-500 text-white text-center py-3 text-sm">
-                Copyright 2025 ©kreavoks official | Powered by kreavoks official
+            <div className="bg-blue-500 text-white text-center p-3 text-sm">
+                Copyright <span>{new Date().getFullYear()}</span> ©kreavoks official | Powered by kreavoks official
             </div>
         </footer>
     );

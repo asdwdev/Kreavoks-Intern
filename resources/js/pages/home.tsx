@@ -39,14 +39,14 @@ export default function Home() {
       <Head title="Kreavoks" />
       <div className="flex min-h-screen flex-col bg-white text-black">
         {/* Section 1: Hero */}
-        <div className="relative mb-8 grid grid-cols-1 md:grid-cols-2 md:items-center justify-between gap-8 bg-[radial-gradient(#e5e7eb_2px,transparent_2px)] [background-size:16px_16px]">
+        <section className="relative mb-8 grid grid-cols-1 md:grid-cols-2 md:items-center justify-between gap-8 bg-[radial-gradient(#e5e7eb_2px,transparent_2px)] [background-size:16px_16px]">
         {/* Pseudo-element for fading effect */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/80 to-white pointer-events-none"></div>
 
         {/* Left Content */}
         <div className="relative w-full max-w-4xl mx-auto px-6 md:px-12 lg:px-16 py-12 flex flex-col items-start gap-4 z-10">
           <div className="gap-2">
-            <p className="text-blue-500 text-md md:text-base">No.1 agensi Digitalisasi dan Pemberdayaan Skill</p>
+            <p className="text-blue-500 text-md md:text-base"><span className="font-bold">No.1</span> Agensi Digitalisasi dan Pemberdayaan Skill</p>
             <h1 className="text-6xl md:text-6xl lg:text-7xl font-bold text-black leading-tight">
                 Masa Depan <span className="text-blue-500">Digital</span> Dimulai dari <span className="text-blue-500">Sini</span>.
             </h1>
@@ -90,81 +90,84 @@ export default function Home() {
           <div className="relative px-6 md:px-12 lg:px-16 flex items-center justify-center">
             <img
               src="images/backgrounds/HeroBg.png"
-              className="w-[140%] h-auto absolute -top-26 md:-top-32 -left-0 z-0"
+              className="w-full md:max-w-[800px] h-auto absolute -top-26 md:-top-32 right-0 z-0"
               alt="Background"
             />
             <img src="images/hero-people.png" className="w-3xl h-full -left-15 md:max-w-[600px] z-10 relative" alt="Hero" />
           </div>
-        </div>
+        </section>
 
         {/* Section 2: Company List Slider */}
-        <div className="relative px-6 md:px-12 lg:px-16 py-10 flex flex-col md:flex-row items-center gap-6 md:gap-10">
-          <h2 className="font-bold text-black text-xl md:text-2xl whitespace-nowrap">
-            Trusted by <span className="inline md:block"><span className="font-normal text-base md:text-xl">100+ Company</span></span>
-          </h2>
-
-
-          <div className="flex overflow-hidden w-full whitespace-nowrap [mask-image:_linear-gradient(to_right,transparent_0,_white_128px,_white_calc(100%-200px),transparent_100%)]">
-            <div className="flex animate-loop-scroll">
-              <img
-                src="images/ecotainment.svg"
-                className="max-w-none mx-6 grayscale hover:grayscale-0 transition-all duration-300"
-                alt="Ecotainment"
-              />
-              <img
-                src="images/upala.svg"
-                className="max-w-none mx-6 grayscale hover:grayscale-0 transition-all duration-300"
-                alt="Upala"
-              />
-              <img
-                src="images/umkmgo.svg"
-                className="max-w-none mx-6 grayscale hover:grayscale-0 transition-all duration-300"
-                alt="UMKM Go"
-              />
-              <img
-                src="images/dpma.svg"
-                className="max-w-none mx-6 grayscale hover:grayscale-0 transition-all duration-300"
-                alt="DPMA"
-              />
-            </div>
-            <div className="flex animate-loop-scroll" aria-hidden="true">
-              <img
-                src="images/ecotainment.svg"
-                className="max-w-none mx-6 grayscale hover:grayscale-0 transition-all duration-300"
-                alt="Ecotainment"
-              />
-              <img
-                src="images/upala.svg"
-                className="max-w-none mx-6 grayscale hover:grayscale-0 transition-all duration-300"
-                alt="Upala"
-              />
-              <img
-                src="images/umkmgo.svg"
-                className="max-w-none mx-6 grayscale hover:grayscale-0 transition-all duration-300"
-                alt="UMKM Go"
-              />
-              <img
-                src="images/dpma.svg"
-                className="max-w-none mx-6 grayscale hover:grayscale-0 transition-all duration-300"
-                alt="DPMA"
-              />
+        <section className="py-10">
+          <div className="container mx-auto px-6 md:px-12 lg:px-16">
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+              <h2 className="font-bold text-black text-xl md:text-2xl whitespace-nowrap">
+                Trusted by <span className="inline md:block"><span className="font-normal text-base md:text-xl">100+ Company</span></span>
+              </h2>
+              <div className="flex overflow-hidden w-full whitespace-nowrap [mask-image:_linear-gradient(to_right,transparent_0,_white_128px,_white_calc(100%-200px),transparent_100%)]">
+                <div className="flex animate-loop-scroll">
+                  <img
+                    src="images/ecotainment.svg"
+                    className="max-w-none mx-6 grayscale hover:grayscale-0 transition-all duration-300"
+                    alt="Ecotainment"
+                  />
+                  <img
+                    src="images/upala.svg"
+                    className="max-w-none mx-6 grayscale hover:grayscale-0 transition-all duration-300"
+                    alt="Upala"
+                  />
+                  <img
+                    src="images/umkmgo.svg"
+                    className="max-w-none mx-6 grayscale hover:grayscale-0 transition-all duration-300"
+                    alt="UMKM Go"
+                  />
+                  <img
+                    src="images/dpma.svg"
+                    className="max-w-none mx-6 grayscale hover:grayscale-0 transition-all duration-300"
+                    alt="DPMA"
+                  />
+                </div>
+                <div className="flex animate-loop-scroll" aria-hidden="true">
+                  <img
+                    src="images/ecotainment.svg"
+                    className="max-w-none mx-6 grayscale hover:grayscale-0 transition-all duration-300"
+                    alt="Ecotainment"
+                  />
+                  <img
+                    src="images/upala.svg"
+                    className="max-w-none mx-6 grayscale hover:grayscale-0 transition-all duration-300"
+                    alt="Upala"
+                  />
+                  <img
+                    src="images/umkmgo.svg"
+                    className="max-w-none mx-6 grayscale hover:grayscale-0 transition-all duration-300"
+                    alt="UMKM Go"
+                  />
+                  <img
+                    src="images/dpma.svg"
+                    className="max-w-none mx-6 grayscale hover:grayscale-0 transition-all duration-300"
+                    alt="DPMA"
+                  />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
+
 
         {/* Section 3: Youtube Introduction */}
-        <div className="px-6 md:px-12 lg:px-16 py-10">
+        <section className="px-6 md:px-12 lg:px-16 py-10">
           <iframe
-            className="w-full h-[560px] aspect-video bg-blue-500 border-4 border-blue-200 rounded-2xl md:rounded-3xl shadow-lg"
+            className="w-full h-auto md:h-[560px] aspect-video bg-blue-500 border-4 border-blue-200 rounded-2xl md:rounded-3xl shadow-lg"
             src="https://www.youtube.com/embed/g4XCwjCpVIs"
             title="Introduction Video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-        </div>
+        </section>
 
         {/* Section 4: Service */}
-        <div className="relative grid grid-cols-1 lg:grid-cols-2 md:items-start justify-between gap-x-8 py-10">
+        <section className="relative grid grid-cols-1 lg:grid-cols-2 md:items-start justify-between gap-x-8 py-10">
           <img src="images/backgrounds/ServiceBg.png" className="w-full absolute top-0 z-0" alt="Service Background" />
 
           {/* Left Content */}
@@ -258,7 +261,7 @@ export default function Home() {
                     </div>
 
                     {/* Content with background image */}
-                    <div className="shadow-md flex-1 flex flex-col justify-end bg-[url(/images/service-people.png)] bg-cover bg-right-top bg-no-repeat rounded-b-2xl rounded-tr-2xl bg-blue-500 p-6 pt-10">
+                    <div className="shadow-md flex-3/4 flex flex-col justify-end bg-[url(/images/service-people.png)] bg-cover bg-right-top bg-no-repeat rounded-b-2xl rounded-tr-2xl bg-blue-500 p-6 pt-10">
                       <div className="w-fit z-10 mb-3">
                         <div className="flex items-center justify-center h-14 w-14 p-3 rounded-full bg-blue-50">
                           <img src="images/icons/JasaPelatihanSkill.svg" className="size-8" alt="Training" />
@@ -271,10 +274,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* Section 5: Event List */}
-        <div className="px-6 md:px-12 lg:px-16 py-10 w-full flex flex-col gap-6 z-10">
+        <section className="px-6 md:px-12 lg:px-16 py-10 w-full flex flex-col gap-6 z-10">
           <div className="flex items-center justify-between">
             <div className="inline-flex items-center gap-3">
               <img src="images/icons/UpcomingEvents.svg" className="size-7 md:size-8" alt="Events" />
@@ -296,10 +299,10 @@ export default function Home() {
               </div>
             )}
           ></Slider>
-        </div>
+        </section>
 
         {/* Section 6: Best Seller Course List */}
-        <div className="px-6 md:px-12 lg:px-16 py-10 w-full flex flex-col gap-6 z-10">
+        <section className="px-6 md:px-12 lg:px-16 py-10 w-full flex flex-col gap-6 z-10">
           <div className="flex items-center justify-between">
             <div className="inline-flex items-center gap-3">
               <img src="images/icons/BestSellerCourses.svg" className="size-7 md:size-8" alt="Courses" />
@@ -321,15 +324,15 @@ export default function Home() {
               </div>
             )}
           ></Slider>
-        </div>
+        </section>
 
         {/* Section 7: Service Packages */}
-        <div className="py-10">
+        <section className="py-10">
           <ServicePackageSection servicePackages={servicePackages} />
-        </div>
+        </section>
 
         {/* Section 8: CTA Mentor */}
-        <div className="px-6 md:px-12 lg:px-16 py-10 w-full flex flex-col gap-6 z-10">
+        <section className="px-6 md:px-12 lg:px-16 py-10 w-full flex flex-col gap-6 z-10">
           <div className="relative flex flex-col p-6 md:p-12 items-center justify-center gap-6 bg-gradient-to-r from-blue-700 to-[#2F81FF] rounded-xl overflow-hidden">
             {/* SVG decorative shape */}
             <svg
@@ -373,10 +376,10 @@ export default function Home() {
               </button>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* Section 9: Testimonial */}
-        <div className="px-6 md:px-12 lg:px-16 py-10 w-full flex flex-col gap-6 z-10">
+        <section className="px-6 md:px-12 lg:px-16 py-10 w-full flex flex-col gap-6 z-10">
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold">Hear Testimonial</h2>
             <p className="text-xl md:text-2xl text-gray-600">2000+ Users Satisfied</p>
@@ -387,7 +390,7 @@ export default function Home() {
               <TestimonialCard key={item.id} testimonial={item} />
             ))}
           </div>
-        </div>
+        </section>
       </div>
     </AppLayout>
   )
