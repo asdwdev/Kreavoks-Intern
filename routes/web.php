@@ -3,9 +3,9 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\File;
 
 Route::get('/', function () {
-
     // ***
     // Untuk login ketika sudah diterapkan
     // ***
@@ -27,6 +27,27 @@ Route::get('/', function () {
         'testimonials' => $dummyTestimonials,
     ]);
 })->name('home');
+
+Route::get('/program', function () {
+    $dummyEvents = json_decode(File::get(resource_path('js/data/dummyEvents.json')), true);
+    $dummyCourses = json_decode(File::get(resource_path('js/data/dummyCourses.json')), true);
+    return Inertia::render('program', [
+        'events' => $dummyEvents,
+        'courses' => $dummyCourses,
+    ]);
+})->name('program');
+
+Route::get('/portfolio', function () {
+    $dummyPortfolios = json_decode(File::get(resource_path('js/data/dummyPortfolios.json')), true);
+    return Inertia::render('portfolio', [
+        'portfolios' => $dummyPortfolios,
+    ]);
+})->name('portfolio');
+
+
+Route::get('/about', function () {
+    return Inertia::render('about');
+})->name('about');
 
 Route::get('/login', [AuthController::class, 'loginPage'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);

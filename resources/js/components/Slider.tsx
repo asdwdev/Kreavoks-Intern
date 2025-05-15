@@ -1,98 +1,194 @@
-import { useRef, useState, useEffect } from "react";
+"use client"
 
-interface Props {
-    items: any[];
-    renderItem: (item: any, index: number) => React.ReactNode;
+import type React from "react"
+
+import { useState, useRef, useEffect } from "react"
+
+interface SliderProps<T> {
+  items: T[]
+  renderItem: (item: T, index: number) => React.ReactNode
+  autoplay?: boolean
+  autoplayInterval?: number
 }
 
-export default function Slider({ items, renderItem }: Props) {
-    const sliderRef = useRef<HTMLDivElement>(null);
-    const [currentIndex, setCurrentIndex] = useState(0);
+export default function Slider<T>({ items, renderItem, autoplay = false, autoplayInterval = 5000 }: SliderProps<T>) {
+  const sliderRef = useRef<HTMLDivElement>(null)
+  const [isDragging, setIsDragging] = useState(false)
+  const [startX, setStartX] = useState(0)
+  const [scrollLeft, setScrollLeft] = useState(0)
+  const [isVisible, setIsVisible] = useState(false)
+  const [currentPage, setCurrentPage] = useState(0)
+  const itemsPerPage = 4 // Adjust based on your layout
 
-    const scrollToIndex = (index: number) => {
-        if (!sliderRef.current) return;
-        const container = sliderRef.current;
-        const cardWidth = container.children[0]?.clientWidth || 0;
-        const visibleItems = Math.floor(container.clientWidth / cardWidth);
-        const maxScrollLeft = container.scrollWidth - container.clientWidth;
+  // Calculate total pages
+  const totalPages = Math.ceil(items.length / itemsPerPage)
 
-        const maxIndex = items.length - visibleItems;
-        if (index > maxIndex) index = maxIndex;
+  // Animation on mount
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
 
-        let newScrollLeft = index * cardWidth;
+  // Autoplay functionality
+  useEffect(() => {
+    if (!autoplay) return
 
-        if (index >= items.length - visibleItems) {
-            newScrollLeft = maxScrollLeft;
-        }
+    const interval = setInterval(() => {
+      if (sliderRef.current && !isDragging) {
+        const nextPage = (currentPage + 1) % totalPages
+        scrollToPage(nextPage)
+      }
+    }, autoplayInterval)
 
-        if (newScrollLeft > maxScrollLeft) {
-            newScrollLeft = maxScrollLeft;
-            index = Math.floor(maxScrollLeft / cardWidth);
-        }
+    return () => clearInterval(interval)
+  }, [autoplay, autoplayInterval, isDragging, currentPage, totalPages])
 
-        container.scrollTo({
-            left: newScrollLeft,
-            behavior: "smooth",
-        });
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true)
+    setStartX(e.pageX - (sliderRef.current?.offsetLeft || 0))
+    setScrollLeft(sliderRef.current?.scrollLeft || 0)
+  }
 
-        setCurrentIndex(index);
-    };
+  const handleMouseUp = () => {
+    setIsDragging(false)
+  }
 
-    const handleScroll = () => {
-        if (!sliderRef.current) return;
-        const container = sliderRef.current;
-        const scrollLeft = container.scrollLeft;
-        const cardWidth = container.children[0]?.clientWidth || 1;
-        const currentVisibleIndex = Math.round(scrollLeft / cardWidth);
-        setCurrentIndex(currentVisibleIndex);
-    };
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return
+    e.preventDefault()
+    const x = e.pageX - (sliderRef.current?.offsetLeft || 0)
+    const walk = (x - startX) * 2 // Scroll speed multiplier
+    if (sliderRef.current) {
+      sliderRef.current.scrollLeft = scrollLeft - walk
+    }
+  }
 
-    useEffect(() => {
-        const handleResize = () => {
-            if (!sliderRef.current) return;
-            const container = sliderRef.current;
-            const scrollLeft = container.scrollLeft;
-            const cardWidth = container.children[0]?.clientWidth || 1;
-            const currentVisibleIndex = Math.round(scrollLeft / cardWidth);
-            setCurrentIndex(currentVisibleIndex);
-        };
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDragging(true)
+    setStartX(e.touches[0].pageX - (sliderRef.current?.offsetLeft || 0))
+    setScrollLeft(sliderRef.current?.scrollLeft || 0)
+  }
 
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return
+    const x = e.touches[0].pageX - (sliderRef.current?.offsetLeft || 0)
+    const walk = (x - startX) * 2
+    if (sliderRef.current) {
+      sliderRef.current.scrollLeft = scrollLeft - walk
+    }
+  }
 
-    return (
-        <div className="relative flex flex-col gap-4 w-full overflow-hidden md:px-6 md:py-3 rounded-xl">
-            {/* Wrapper khusus slider + gradient */}
-            <div className="relative">
-                {/* Gradient kanan */}
-                <div className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white to-transparent z-10" />
+  const handleTouchEnd = () => {
+    setIsDragging(false)
+  }
 
-                {/* Slider content */}
-                <div
-                    ref={sliderRef}
-                    onScroll={handleScroll}
-                    className="flex overflow-x-scroll snap-x snap-mandatory scroll-smooth gap-0 hide-scrollbar"
-                >
-                    {items.map((item, index) => renderItem(item, index))}
-                </div>
-            </div>
+  const scrollToPage = (pageIndex: number) => {
+    if (sliderRef.current) {
+      const containerWidth = sliderRef.current.clientWidth
+      sliderRef.current.scrollTo({
+        left: pageIndex * containerWidth,
+        behavior: "smooth",
+      })
+      setCurrentPage(pageIndex)
+    }
+  }
 
-            {/* Tombol navigasi (tidak terkena gradient) */}
-            <div className="flex items-center justify-end gap-2">
-                <button
-                    onClick={() => scrollToIndex(Math.max(currentIndex - 1, 0))}
-                    className="border border-blue-500 text-white p-2 rounded-full w-10 h-10 cursor-pointer"
-                >
-                    <i className="fa-solid fa-arrow-left text-blue-500"></i>
-                </button>
-                <button
-                    onClick={() => scrollToIndex(Math.min(currentIndex + 1, items.length - 1))}
-                    className="bg-blue-500 text-white p-2 rounded-full w-10 h-10 cursor-pointer"
-                >
-                    <i className="fa-solid fa-arrow-right text-white"></i>
-                </button>
-            </div>
+  const nextPage = () => {
+    const nextPageIndex = Math.min(currentPage + 1, totalPages - 1)
+    scrollToPage(nextPageIndex)
+  }
+
+  const prevPage = () => {
+    const prevPageIndex = Math.max(currentPage - 1, 0)
+    scrollToPage(prevPageIndex)
+  }
+
+  // Update current page based on scroll position
+  const handleScroll = () => {
+    if (sliderRef.current) {
+      const containerWidth = sliderRef.current.clientWidth
+      const scrollPosition = sliderRef.current.scrollLeft
+      const newPage = Math.round(scrollPosition / containerWidth)
+      if (newPage !== currentPage) {
+        setCurrentPage(newPage)
+      }
+    }
+  }
+
+  useEffect(() => {
+    const slider = sliderRef.current
+    if (slider) {
+      slider.addEventListener("scroll", handleScroll)
+      return () => {
+        slider.removeEventListener("scroll", handleScroll)
+      }
+    }
+  }, [currentPage])
+
+  return (
+    <div className="relative">
+      {/* Slider container */}
+      <div
+        ref={sliderRef}
+        className={`flex overflow-x-auto snap-x snap-mandatory hide-scrollbar transition-opacity duration-500 ${
+          isVisible ? "opacity-100" : "opacity-0"
+        }`}
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+        onMouseMove={handleMouseMove}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        {items.map((item, index) => (
+          <div
+            key={index}
+            className="snap-start flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 p-2"
+            style={{ "--delay": index } as React.CSSProperties}
+          >
+            {renderItem(item, index)}
+          </div>
+        ))}
+      </div>
+
+      {/* Navigation buttons at bottom right */}
+      {totalPages > 1 && (
+        <div className="flex justify-end mt-4 gap-2">
+          <button
+            onClick={prevPage}
+            disabled={currentPage === 0}
+            className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 transition-all duration-300"
+            aria-label="Previous page"
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <button
+            onClick={nextPage}
+            disabled={currentPage === totalPages - 1}
+            className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 transition-all duration-300"
+            aria-label="Next page"
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
-    );
+      )}
+    </div>
+  )
 }

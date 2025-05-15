@@ -37,14 +37,14 @@ export function Navbar() {
                 <Link href="/" className={`px-4 py-1 rounded-full hover:text-blue-500 hover:font-semibold hover:bg-blue-50 ${url === "/" ? "text-blue-500 font-semibold bg-blue-50" : "text-gray-800"}`}>
                     Home
                 </Link>
-                <Link href="#" className={`px-4 py-1 rounded-full hover:text-blue-500 hover:font-semibold hover:bg-blue-50 ${url === "/program" ? "text-blue-500 font-semibold bg-blue-50" : "text-gray-800"}`}>
+                <Link href="/program" className={`px-4 py-1 rounded-full hover:text-blue-500 hover:font-semibold hover:bg-blue-50 ${url === "/program" ? "text-blue-500 font-semibold bg-blue-50" : "text-gray-800"}`}>
                     Program
                 </Link>
-                <Link href="#" className={`px-4 py-1 rounded-full hover:text-blue-500 hover:font-semibold hover:bg-blue-50 ${url === "/about" ? "text-blue-500 font-semibold bg-blue-50" : "text-gray-800"}`}>
-                    About us
+                <Link href="/portfolio" className={`px-4 py-1 rounded-full hover:text-blue-500 hover:font-semibold hover:bg-blue-50 ${url === "/portfolio" ? "text-blue-500 font-semibold bg-blue-50" : "text-gray-800"}`}>
+                    Portfolio
                 </Link>
-                <Link href="#" className={`px-4 py-1 rounded-full hover:text-blue-500 hover:font-semibold hover:bg-blue-50 ${url === "/contact" ? "text-blue-500 font-semibold bg-blue-50" : "text-gray-800"}`}>
-                    Contact
+                <Link href="/about" className={`px-4 py-1 rounded-full hover:text-blue-500 hover:font-semibold hover:bg-blue-50 ${url === "/about" ? "text-blue-500 font-semibold bg-blue-50" : "text-gray-800"}`}>
+                    About us
                 </Link>
             </div>
 
@@ -94,15 +94,16 @@ export function Navbar() {
                     <Link href="/" className={`w-full px-2 py-3 text-base hover:text-blue-400 border-b border-white/10 ${url === "/" ? "text-blue-400" : "text-white"}`} onClick={toggleMenu}>
                         Home
                     </Link>
-                    <Link href="#" className={`w-full px-2 py-3 text-base hover:text-blue-400 border-b border-white/10 ${url === "/event" ? "text-blue-400" : "text-white"}`} onClick={toggleMenu}>
+                    <Link href="/program" className={`w-full px-2 py-3 text-base hover:text-blue-400 border-b border-white/10 ${url === "/event" ? "text-blue-400" : "text-white"}`} onClick={toggleMenu}>
                         Program
                     </Link>
-                    <Link href="#" className={`w-full px-2 py-3 text-base hover:text-blue-400 border-b border-white/10 ${url === "/about" ? "text-blue-400" : "text-white"}`} onClick={toggleMenu}>
+                    <Link href="/portfolio" className={`w-full px-2 py-3 text-base hover:text-blue-400 border-b border-white/10 ${url === "/contact" ? "text-blue-400" : "text-white"}`} onClick={toggleMenu}>
+                        Portfolio
+                    </Link>
+                    <Link href="about" className={`w-full px-2 py-3 text-base hover:text-blue-400 border-b border-white/10 ${url === "/about" ? "text-blue-400" : "text-white"}`} onClick={toggleMenu}>
                         About
                     </Link>
-                    <Link href="#" className={`w-full px-2 py-3 text-base hover:text-blue-400 border-b border-white/10 ${url === "/contact" ? "text-blue-400" : "text-white"}`} onClick={toggleMenu}>
-                        Contact
-                    </Link>
+                    
                 </div>
             </div>
         </nav>

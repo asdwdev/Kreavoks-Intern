@@ -15,15 +15,49 @@ export interface SharedData {
     auth: Auth;
     [key: string]: unknown;
 }
+// Course
+export interface Course {
+  discount_price: any;
+  id: number
+  title: string
+  category: string
+  price: number
+  rating: number
+  sold: number
+  videos: number
+  status: string
+  description?: string
+  image?: string
+  level?: string
+  duration?: string
+  students_count?: number
+  instructor?: {
+    name: string
+    avatar: string
+    role: string
+  }
+}
+
 
 // Event
 export interface Event {
-    id: number;
-    type: string;
-    title: string;
-    price: number;
-    start_date: Date;
-    status: string;
+  discount_price: any;
+  id: number
+  title: string
+  type: string
+  price: number
+  start_date: string
+  status: string
+  description?: string
+  image?: string
+  category?: string
+  location?: string
+  time?: string
+  speaker?: {
+    name: string
+    avatar: string
+    role: string
+  }
 }
 
 // Course
@@ -60,6 +94,9 @@ export interface ServicePackage {
 
 
 export interface Testimonial {
+    avatar: string;
+    content: any;
+    company: ReactNode;
     id: number;
     name: string;
     role: string;
