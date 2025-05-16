@@ -17,11 +17,11 @@ export interface SharedData {
 }
 // Course
 export interface Course {
-  discount_price: any;
   id: number
   title: string
   category: string
   price: number
+  discount_price: any;
   rating: number
   sold: number
   videos: number
@@ -94,13 +94,32 @@ export interface ServicePackage {
 
 
 export interface Testimonial {
-    avatar: string;
-    content: any;
-    company: ReactNode;
     id: number;
     name: string;
     role: string;
     title: string;
     message: string;
     image: string;
+    avatar: string;
+    content: any;
+    company: ReactNode;
+}
+
+export interface Portfolio {
+    id: number
+    title: string
+    client: string
+    category: string
+    description: string
+    image: string
+    year: number
+    link?: string
+}
+
+export interface Mentor {
+    id: number
+    name: string
+    job: string
+    role: string
+    image?: string
 }

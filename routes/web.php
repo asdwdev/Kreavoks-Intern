@@ -20,11 +20,13 @@ Route::get('/', function () {
     $dummyCourses = json_decode(File::get(resource_path('js/data/dummyCourses.json')), true);
     $dummyServicePackages = json_decode(File::get(resource_path('js/data/dummyPackages.json')), true);
     $dummyTestimonials = json_decode(File::get(resource_path('js/data/dummyTestimonials.json')), true);
+    $dummyMentors = json_decode(File::get(resource_path('js/data/dummyMentors.json')), true);
     return Inertia::render('home', [
         'events' => $dummyEvents,
         'courses' => $dummyCourses,
         'servicePackages' => $dummyServicePackages,
         'testimonials' => $dummyTestimonials,
+        'mentors' => $dummyMentors,
     ]);
 })->name('home');
 

@@ -5,7 +5,7 @@
     "client": "Ecotainment Indonesia",
     "category": "Website",
     "description": "Redesign website untuk Ecotainment Indonesia dengan fokus pada pengalaman pengguna yang lebih baik dan tampilan yang modern. Website ini dirancang untuk menampilkan konten lingkungan dengan cara yang menarik dan informatif.",
-    "image": "/images/portfolio/ecotainment.jpg",
+    "image": null,
     "year": 2023,
     "link": "https://ecotainment.id"
   },
@@ -15,7 +15,7 @@
     "client": "UMKM Go",
     "category": "Mobile App",
     "description": "Aplikasi mobile untuk membantu UMKM memasarkan produk mereka secara online. Aplikasi ini dilengkapi dengan fitur manajemen inventaris, pemrosesan pesanan, dan analitik penjualan.",
-    "image": "/images/portfolio/umkmgo.jpg",
+    "image": null,
     "year": 2023,
     "link": "https://umkmgo.id"
   },
@@ -25,7 +25,7 @@
     "client": "Upala Fashion",
     "category": "Branding",
     "description": "Pengembangan identitas merek untuk Upala Fashion, termasuk logo, panduan merek, dan aset visual untuk digunakan di berbagai platform digital dan cetak.",
-    "image": "/images/portfolio/upala.jpg",
+    "image": null,
     "year": 2022
   },
   {
@@ -34,7 +34,7 @@
     "client": "Dinas Pendidikan Malang",
     "category": "Website",
     "description": "Platform e-learning komprehensif untuk Dinas Pendidikan Malang yang memungkinkan guru dan siswa untuk berinteraksi secara online, berbagi materi pembelajaran, dan melacak kemajuan.",
-    "image": "/images/portfolio/dpma.jpg",
+    "image": null,
     "year": 2022,
     "link": "https://elearning.dpma.id"
   },
@@ -44,7 +44,7 @@
     "client": "HealthTech Indonesia",
     "category": "Mobile App",
     "description": "Aplikasi kesehatan yang memungkinkan pengguna untuk menjadwalkan janji dengan dokter, menerima konsultasi online, dan mengelola catatan kesehatan mereka.",
-    "image": "/images/portfolio/healthtech.jpg",
+    "image": null,
     "year": 2021
   },
   {
@@ -53,7 +53,7 @@
     "client": "FreshMart",
     "category": "E-Commerce",
     "description": "Platform e-commerce untuk FreshMart yang memungkinkan pelanggan untuk memesan bahan makanan segar secara online dengan pengiriman cepat dan pembayaran yang aman.",
-    "image": "/images/portfolio/freshmart.jpg",
+    "image": null,
     "year": 2021,
     "link": "https://freshmart.id"
   }

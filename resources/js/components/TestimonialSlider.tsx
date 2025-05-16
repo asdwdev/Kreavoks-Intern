@@ -1,92 +1,97 @@
 "use client"
 
-import { useRef, useEffect } from "react"
+import { useRef, useEffect, useState } from "react"
 import type { Testimonial } from "@/types"
 import TestimonialCard from "./cards/TestimonialCard"
 
 interface TestimonialSliderProps {
-  testimonials: Testimonial[]
+    testimonials: Testimonial[]
 }
 
 export default function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
-  const topRowRef = useRef<HTMLDivElement>(null)
-  const bottomRowRef = useRef<HTMLDivElement>(null)
+    const topRowRef = useRef<HTMLDivElement>(null)
+    const bottomRowRef = useRef<HTMLDivElement>(null)
+    const [isTopHovered, setIsTopHovered] = useState(false)
+    const [isBottomHovered, setIsBottomHovered] = useState(false)
 
-  // Split testimonials into two groups
-  const halfLength = Math.ceil(testimonials.length / 2)
-  const topRowTestimonials = testimonials.slice(0, halfLength)
-  const bottomRowTestimonials = testimonials.slice(halfLength).concat(testimonials.slice(halfLength))
+    const halfLength = Math.ceil(testimonials.length / 2)
+    const topRowTestimonials = testimonials.slice(0, halfLength)
+    const bottomRowTestimonials = testimonials.slice(halfLength)
 
-  // Duplicate testimonials for infinite scroll effect
-  const duplicatedTopRow = [...topRowTestimonials, ...topRowTestimonials]
-  const duplicatedBottomRow = [...bottomRowTestimonials, ...bottomRowTestimonials]
+    // Double the content to simulate infinite scroll
+    const duplicatedTopRow = [...topRowTestimonials, ...topRowTestimonials]
+    const duplicatedBottomRow = [...bottomRowTestimonials, ...bottomRowTestimonials]
 
-  useEffect(() => {
-    // Function to animate the scroll
-    const animateScroll = () => {
-      if (topRowRef.current && bottomRowRef.current) {
-        // Top row scrolls left
-        if (topRowRef.current.scrollLeft >= topRowRef.current.scrollWidth / 2) {
-          topRowRef.current.scrollLeft = 0
-        } else {
-          topRowRef.current.scrollLeft += 0.5
+    useEffect(() => {
+        let animationFrameId: number
+
+        const animate = () => {
+            const top = topRowRef.current
+            const bottom = bottomRowRef.current
+
+            if (top && !isTopHovered) {
+                if (top.scrollLeft >= top.scrollWidth / 2) {
+                    top.scrollLeft = 0
+                } else {
+                    top.scrollLeft += 0.5
+                }
+            }
+
+            if (bottom && !isBottomHovered) {
+                if (bottom.scrollLeft <= 0) {
+                    bottom.scrollLeft = bottom.scrollWidth / 2
+                } else {
+                    bottom.scrollLeft -= 0.5
+                }
+            }
+
+            animationFrameId = requestAnimationFrame(animate)
         }
 
-        // Bottom row scrolls right
-        if (bottomRowRef.current.scrollLeft <= 0) {
-          bottomRowRef.current.scrollLeft = bottomRowRef.current.scrollWidth / 2
-        } else {
-          bottomRowRef.current.scrollLeft -= 0.5
-        }
-      }
-    }
+        animationFrameId = requestAnimationFrame(animate)
 
-    // Set up the animation interval
-    const animationInterval = setInterval(animateScroll, 20)
+        return () => cancelAnimationFrame(animationFrameId)
+    }, [isTopHovered, isBottomHovered])
 
-    // Clean up the interval on component unmount
-    return () => clearInterval(animationInterval)
-  }, [])
+    return (
+        <div className="w-full space-y-6">
+            {/* Top row */}
+            <div className="relative w-full overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10"></div>
 
-  return (
-    <div className="w-full space-y-6">
-      {/* Top row - scrolls left */}
-      <div className="relative w-full overflow-hidden">
-        {/* Fade effect on left and right */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10"></div>
-
-        <div
-          ref={topRowRef}
-          className="flex gap-4 overflow-x-auto hide-scrollbar py-2"
-          style={{ scrollBehavior: "smooth" }}
-        >
-          {duplicatedTopRow.map((testimonial, index) => (
-            <div key={`top-${testimonial.id}-${index}`} className="flex-shrink-0">
-              <TestimonialCard testimonial={testimonial} />
+                <div
+                    ref={topRowRef}
+                    className="flex gap-4 overflow-x-auto hide-scrollbar py-2"
+                    onMouseEnter={() => setIsTopHovered(true)}
+                    onMouseLeave={() => setIsTopHovered(false)}
+                >
+                    {duplicatedTopRow.map((testimonial, index) => (
+                        <div key={`top-${testimonial.id}-${index}`} className="flex-shrink-0">
+                            <TestimonialCard testimonial={testimonial} />
+                        </div>
+                    ))}
+                </div>
             </div>
-          ))}
-        </div>
-      </div>
 
-      {/* Bottom row - scrolls right */}
-      <div className="relative w-full overflow-hidden">
-        {/* Fade effect on left and right */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10"></div>
+            {/* Bottom row */}
+            <div className="relative w-full overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10"></div>
 
-        <div
-          ref={bottomRowRef}
-          className="flex gap-4 overflow-x-auto hide-scrollbar py-2"
-          style={{ scrollBehavior: "smooth" }}
-        >
-          {duplicatedBottomRow.map((testimonial, index) => (
-            <div key={`bottom-${testimonial.id}-${index}`} className="flex-shrink-0">
-              <TestimonialCard testimonial={testimonial} />
+                <div
+                    ref={bottomRowRef}
+                    className="flex gap-4 overflow-x-auto hide-scrollbar py-2"
+                    onMouseEnter={() => setIsBottomHovered(true)}
+                    onMouseLeave={() => setIsBottomHovered(false)}
+                >
+                    {duplicatedBottomRow.map((testimonial, index) => (
+                        <div key={`bottom-${testimonial.id}-${index}`} className="flex-shrink-0">
+                            <TestimonialCard testimonial={testimonial} />
+                        </div>
+                    ))}
+                </div>
             </div>
-          ))}
         </div>
-      </div>
-    </div>
-  )
+    )
 }

@@ -26,14 +26,14 @@ export function Footer() {
                 {/* Address */}
                 <div className="text-sm break-words">
                     <p className="font-semibold mb-3">Alamat</p>
-                    <p className="text-gray-500">Gedung Wisma Mulia 2</p>
-                    <p className="text-gray-500">Gatot Soebroto Jakarta Selatan</p>
+                    <p className="text-gray-500">Jl. Kumbang No.14</p>
+                    <p className="text-gray-500">Babakan, Kota Bogor</p>
                     <div className="flex items-center gap-2 mt-2 text-gray-500">
-                        <Mail size={16} /> <span>lorem@ipsum.io</span>
+                        <Mail size={16} /> <span>hello@kreavoks.my.id</span>
                     </div>
-                    <div className="flex items-center gap-2 mt-1 text-gray-500">
+                    {/* <div className="flex items-center gap-2 mt-1 text-gray-500">
                         <Phone size={16} /> <span>+62 00000000</span>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Menu */}
@@ -41,16 +41,16 @@ export function Footer() {
                     <p className="font-semibold mb-3">Menu</p>
                     <ul className="space-y-1">
                         <li>
-                            <Link href="#" className="text-gray-500 hover:text-blue-500">Home</Link>
+                            <Link href="/" className="text-gray-500 hover:text-blue-500">Home</Link>
                         </li>
                         <li>
-                            <Link href="#" className="text-gray-500 hover:text-blue-500">Program</Link>
+                            <Link href="/program" className="text-gray-500 hover:text-blue-500">Program</Link>
                         </li>
                         <li>
-                            <Link href="#" className="text-gray-500 hover:text-blue-500">About us</Link>
+                            <Link href="/portfolio" className="text-gray-500 hover:text-blue-500">Portfolio</Link>
                         </li>
                         <li>
-                            <Link href="#" className="text-gray-500 hover:text-blue-500">Contact</Link>
+                            <Link href="/about" className="text-gray-500 hover:text-blue-500">About us</Link>
                         </li>
                     </ul>
                 </div>

@@ -7,7 +7,8 @@
         "rating": 4.8,
         "sold": 1200,
         "videos": 35,
-        "status": "published"
+        "status": "published",
+        "image": "/images/dummy/courses/belajar-flutter.png"
     },
     {
         "id": 2,

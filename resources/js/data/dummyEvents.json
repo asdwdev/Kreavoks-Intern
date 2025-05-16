@@ -1,58 +1,65 @@
 [
     {
         "id": 1,
-        "type": "Webinar",
-        "title": "Belajar React dengan Santai",
-        "price": 50000,
+        "type": "Workshop",
+        "title": "Mastering UI/UX Basics and Career Opportunities",
+        "price": 49900,
         "start_date": "2025-04-10",
-        "status": "active"
+        "status": "inactive",
+        "image": "/images/dummy/events/mastering-uiux.png"
     },
     {
         "id": 2,
         "type": "Workshop",
-        "title": "Laravel x Tailwind",
-        "price": 75000,
+        "title": "Laravel & Tailwind: Bangun UI Cepat dan Efisien",
+        "price": 59900,
         "start_date": "2025-05-01",
-        "status": "inactive"
+        "status": "inactive",
+        "image": "/images/dummy/events/workshop-laravel-tailwind.png"
     },
     {
         "id": 3,
         "type": "Bootcamp",
-        "title": "Fullstack Dev dari Nol 1",
-        "price": 120000,
-        "start_date": "2025-06-01",
-        "status": "active"
+        "title": "Fullstack Web Dev: Dari Nol Hingga Deploy",
+        "price": 149900,
+        "start_date": "2025-06-03",
+        "status": "active",
+        "image": null
     },
     {
         "id": 4,
         "type": "Bootcamp",
-        "title": "Fullstack Dev dari Nol 2",
-        "price": 120000,
-        "start_date": "2025-06-01",
-        "status": "active"
+        "title": "Backend Engineering Intensive with Node.js",
+        "price": 159900,
+        "start_date": "2025-06-15",
+        "status": "active",
+        "image": null
     },
     {
         "id": 5,
-        "type": "Bootcamp",
-        "title": "Fullstack Dev dari Nol 3",
-        "price": 120000,
-        "start_date": "2025-06-01",
-        "status": "active"
+        "type": "Workshop",
+        "title": "Desain Responsif dengan Tailwind CSS",
+        "price": 49900,
+        "start_date": "2025-07-05",
+        "status": "active",
+        "image": null
     },
     {
         "id": 6,
-        "type": "Bootcamp",
-        "title": "Fullstack Dev dari Nol 4",
-        "price": 120000,
-        "start_date": "2025-06-01",
-        "status": "active"
+        "type": "Webinar",
+        "title": "Ngobrolin Karier sebagai Frontend Engineer",
+        "price": 29900,
+        "start_date": "2025-07-12",
+        "status": "active",
+        "image": null
     },
     {
         "id": 7,
         "type": "Bootcamp",
-        "title": "Fullstack Dev dari Nol 5",
-        "price": 120000,
-        "start_date": "2025-06-01",
-        "status": "active"
+        "title": "React + Laravel: Membangun Aplikasi Modern",
+        "price": 169900,
+        "start_date": "2025-08-01",
+        "status": "active",
+        "image": null
     }
 ]

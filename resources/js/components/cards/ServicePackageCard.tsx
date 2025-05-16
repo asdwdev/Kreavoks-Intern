@@ -30,7 +30,7 @@ export default function ServicePackageCard({ paket }: Props) {
     <div
       className={`relative rounded-2xl w-full h-full p-5 flex flex-col transition-all duration-500 transform ${
         isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-      } ${isHovered ? "scale-105" : "scale-100"} ${
+      } ${isHovered ? "md:scale-105" : "scale-100"} ${
         isHighlight
           ? `${isVisible ? "md:-translate-y-3" : ""} shadow-[0_0_5px_3px_rgba(251,191,36,0.6)] bg-gradient-to-r from-blue-500 to-blue-400 text-white`
           : "bg-white text-black shadow-xl"

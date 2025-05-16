@@ -28,7 +28,7 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
       <img
         src={testimonial.image || "/placeholder.svg?height=96&width=96"}
         alt={testimonial.name}
-        className="w-20 h-20 rounded-full object-cover bg-gray-200 flex-shrink-0"
+        className="w-20 h-20 rounded-full object-cover object-top bg-gray-200 flex-shrink-0"
       />
       <div className="flex flex-col gap-1">
         <div>

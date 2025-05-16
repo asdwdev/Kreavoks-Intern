@@ -3,6 +3,7 @@
 import { Link } from "@inertiajs/react"
 import { useState, useEffect } from "react"
 import type { Event } from "@/types"
+import { Calendar } from "lucide-react"
 
 interface EventCardProps {
   event: Event
@@ -75,14 +76,14 @@ export default function EventCard({ event }: EventCardProps) {
       {/* Workshop Tag */}
       <div className="absolute top-3 left-3 z-10">
         <span className="px-3 py-1.5 bg-blue-500 text-white text-xs font-medium rounded-full shadow-sm">
-          WORKSHOP #{event.id.toString().padStart(2, "0")}
+          {event.type.toUpperCase()} #{event.id.toString().padStart(2, "0")}
         </span>
       </div>
 
       {/* Event Image */}
       <div className="relative aspect-video bg-gray-100 overflow-hidden">
         <img
-          src={event.image || `/placeholder.svg?height=200&width=300`}
+          src={event.image || `/images/placeholders/event-card.png`} //Change the placeholder at public/images/placeholders/event-card.png (make sure use the same filename)
           alt={event.title}
           className="w-full h-full object-cover"
         />
@@ -102,7 +103,7 @@ export default function EventCard({ event }: EventCardProps) {
             {event.status === "active" ? (
               <span className="px-2 py-0.5 bg-green-100 text-green-600 text-xs font-medium rounded-full">Ongoing</span>
             ) : (
-              <span className="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs font-medium rounded-full">Expired</span>
+              <span className="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs font-medium rounded-full">Closed</span>
             )}
           </div>
         </div>
@@ -116,20 +117,7 @@ export default function EventCard({ event }: EventCardProps) {
 
         {/* Date */}
         <div className="flex items-center gap-2 mb-3">
-          <svg
-            className="w-4 h-4 text-gray-500"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-            ></path>
-          </svg>
+          <Calendar size={16} className="text-gray-500" />
           <span className="text-sm text-gray-600">{formatDate(event.start_date)}</span>
         </div>
 

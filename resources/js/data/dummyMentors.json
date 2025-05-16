@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Muhammad Ardi Deswanto",
+        "job": "Senior Product Designer at SQE (Sinarmas Group)",
+        "role": "Mentor UI/UX",
+        "image": "/images/dummy/mentors/MuhammadArdi.png"
+    },
+    {
+        "id": 2,
+        "name": "Fauzi Adi Saputra",
+        "job": "Student at IPB University",
+        "role": "Mentor Mobile Development",
+        "image": "/images/dummy/mentors/FauziAdi.png"
+    },
+    {
+        "id": 3,
+        "name": "Setiady Ibrahim Anwar",
+        "job": "Student at IPB University",
+        "role": "Mentor Frontend Development",
+        "image": "/images/dummy/mentors/setiady.png"
+    }
+]

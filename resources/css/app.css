@@ -3,101 +3,11 @@
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 
 @theme {
-    --font-sans: 'Poppins','Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --font-sans: 'Poppins', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 /* Override Blue Color */
-/* Animasi */
-@keyframes blob {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  25% {
-    transform: translate(10px, -10px) scale(1.05);
-  }
-  50% {
-    transform: translate(0, 10px) scale(0.95);
-  }
-  75% {
-    transform: translate(-10px, -5px) scale(1.05);
-  }
-}
-
-.animate-blob {
-  animation: blob 7s infinite;
-}
-
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
-.animation-delay-4000 {
-  animation-delay: 4s;
-}
-
-/* Mask untuk SVG fade */
-.mask-svg-fade {
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
-}
-
-/* Hide scrollbar */
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* Card hover effects */
-.card-hover {
-  transition: all 0.3s ease;
-}
-
-.card-hover:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Testimonial auto-slide */
-.testimonial-slide {
-  transition: transform 0.5s ease-in-out;
-}
-
-/* Service package animations */
-.service-package-hover {
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.service-package-hover:hover {
-  transform: translateY(-10px) scale(1.02);
-}
-
-/* CTA animations */
-.cta-button {
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: 0.5s;
-}
-
-.cta-button:hover::after {
-  left: 100%;
-}
-
-
 @theme {
     --color-blue-50: #ECF3FD;
     --color-blue-100: #C4D8F7;
@@ -109,6 +19,22 @@
     --color-blue-700: #2D5CA3;
     --color-blue-800: #23487F;
     --color-blue-900: #1B3761;
+}
+
+/* Mask untuk SVG fade */
+.mask-svg-fade {
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+}
+
+/* Hide scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 /* Infinite Scroll */
@@ -127,23 +53,164 @@
 }
 
 @theme {
-    --animate-scroll: scroll 10s linear infinite;
+    --animate-wander-1: wander-1 12s ease-in-out infinite;
+    --animate-wander-2: wander-2 14s ease-in-out infinite;
+    --animate-wander-3: wander-3 10s ease-in-out infinite;
 
-    @keyframes scroll {
+    @keyframes wander-1 {
         0% {
-            transform: translateX(0%);
+            transform: translate(0, 0);
+        }
+
+        15% {
+            transform: translate(20px, -10px);
+        }
+
+        35% {
+            transform: translate(-10px, 25px);
+        }
+
+        55% {
+            transform: translate(30px, 15px);
+        }
+
+        75% {
+            transform: translate(-25px, -20px);
         }
 
         100% {
-            transform: translateX(-33.333%);
+            transform: translate(0, 0);
+        }
+    }
+
+    @keyframes wander-2 {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        10% {
+            transform: translate(-15px, 10px);
+        }
+
+        30% {
+            transform: translate(25px, -25px);
+        }
+
+        50% {
+            transform: translate(-10px, 20px);
+        }
+
+        70% {
+            transform: translate(15px, -10px);
+        }
+
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    @keyframes wander-3 {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        20% {
+            transform: translate(10px, -30px);
+        }
+
+        40% {
+            transform: translate(-5px, 15px);
+        }
+
+        60% {
+            transform: translate(20px, 20px);
+        }
+
+        80% {
+            transform: translate(-20px, -10px);
+        }
+
+        100% {
+            transform: translate(0, 0);
         }
     }
 }
 
-/* Tambahkan di CSS global kamu, misal di globals.css */
-.mask-svg-fade {
-    mask-image: linear-gradient(to bottom, transparent 0%, black 60%, black 80%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 60%, black 80%, transparent 100%);
+@theme {
+    --animate-in: fadeIn 0.6s ease forwards;
+    --animate-float: float 6s ease-in-out infinite;
+    --animate-pulse-slow: pulseSlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    --animate-pulse-float: pulseFloat 4s ease-in-out infinite;
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes pulseSlow {
+
+        0%,
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: 0.7;
+            transform: scale(1.05);
+        }
+    }
+
+    @keyframes pulseFloat {
+
+        0%,
+        100% {
+            transform: translateY(0) scale(1);
+        }
+
+        50% {
+            transform: translateY(-5px) scale(1.05);
+        }
+    }
+}
+
+@theme {
+    --animate-expandGradient: expandGradient 1.5s ease-out forwards;
+
+    @keyframes expandGradient {
+        0% {
+            transform: scaleX(0), opacity(0);
+        }
+
+        50% {
+            transform: opacity(1)
+        }
+
+        100% {
+            transform: scaleX(1), opacity(1);
+        }
+    }
 }
 
 
@@ -159,7 +226,8 @@
     /* Firefox */
 }
 
+/* Swiper slide auto height + margin for pagination */
 .swiper-slide {
     height: auto !important;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
