@@ -462,9 +462,9 @@ export default function Home() {
                     {/* Gradient animasi */}
                     <div
                         className={`absolute inset-0 z-0 transition-all duration-[2000ms] ease-out
-    bg-gradient-to-b from-[#2F81FF]/50 via-transparent to-transparent
-    ${animate ? 'animate-expandGradientX' : 'opacity-0 scale-x-0 origin-center'}
-  `}
+                        bg-gradient-to-b from-[#2F81FF]/50 via-transparent to-transparent
+                        ${animate ? 'animate-expandGradientX' : 'opacity-0 scale-x-0 origin-center'}
+                    `}
                     />
 
                     <div className="container mx-auto relative mt-12 z-10 text-center">
@@ -474,7 +474,7 @@ export default function Home() {
                         </p>
 
                         <div className="flex flex-wrap justify-center gap-6">
-                            {mentors.length > 0 ? (
+                            {mentors?.length > 0 ? (
                                 mentors.map((mentor, i) => (
                                     <MentorCard 
                                         key={mentor.id || i}

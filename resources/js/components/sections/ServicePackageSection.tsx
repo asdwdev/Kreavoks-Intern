@@ -37,7 +37,7 @@ export default function ServicePackageSection({ servicePackages }: Props) {
 
             {/* Tambahkan container agar konten tidak terlalu melebar */}
             <div className="w-full max-w-screen-xl mx-auto flex flex-col items-center gap-6">
-                <p className="text-2xl text-white font-semibold text-center z-10">
+                <p className="text-3xl text-white font-semibold text-center z-10">
                     Pilih Paket Jasa Layanan<br />Sesuai Kebutuhan Anda
                 </p>
 

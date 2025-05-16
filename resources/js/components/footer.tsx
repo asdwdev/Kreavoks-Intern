@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 export function Footer() {
     return (
-        <footer className="bg-white text-gray-800 border-t overflow-hidden">
+        <footer className="bg-white text-gray-200 border-t overflow-hidden">
             {/* Main Footer Content */}
             <div className="max-w-7xl w-full mx-auto px-4 md:px-8 py-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_1fr_1.5fr] gap-8">
                 {/* Brand */}
@@ -25,7 +25,7 @@ export function Footer() {
 
                 {/* Address */}
                 <div className="text-sm break-words">
-                    <p className="font-semibold mb-3">Alamat</p>
+                    <p className="font-semibold mb-3 text-gray-900">Alamat</p>
                     <p className="text-gray-500">Jl. Kumbang No.14</p>
                     <p className="text-gray-500">Babakan, Kota Bogor</p>
                     <div className="flex items-center gap-2 mt-2 text-gray-500">
@@ -38,7 +38,7 @@ export function Footer() {
 
                 {/* Menu */}
                 <div className="text-sm">
-                    <p className="font-semibold mb-3">Menu</p>
+                    <p className="font-semibold mb-3 text-gray-900">Menu</p>
                     <ul className="space-y-1">
                         <li>
                             <Link href="/" className="text-gray-500 hover:text-blue-500">Home</Link>
@@ -57,7 +57,7 @@ export function Footer() {
 
                 {/* Link */}
                 <div className="text-sm">
-                    <p className="font-semibold mb-3">Link</p>
+                    <p className="font-semibold mb-3 text-gray-900">Link</p>
                     <ul className="space-y-1">
                         <li>
                             <Link href="#" className="text-gray-500 hover:text-blue-500">Privacy & Policy</Link>
@@ -76,13 +76,13 @@ export function Footer() {
 
                 {/* Newsletter */}
                 <div className="text-sm">
-                    <p className="font-semibold mb-3">Subscribe For Newsletter</p>
+                    <p className="font-semibold mb-3 text-gray-900">Subscribe For Newsletter</p>
                     <form className="flex flex-wrap items-center gap-2 bg-gray-100 px-3 py-2 rounded-full w-full max-w-full">
-                        <Mail size={16} className="text-gray-500" />
+                        <Mail size={16} className="text-gray-800" />
                         <input
                             type="email"
                             placeholder="Enter your email here"
-                            className="flex-1 min-w-0 bg-transparent text-sm focus:outline-none"
+                            className="flex-1 min-w-0 bg-transparent text-gray-400 text-sm focus:outline-none"
                         />
                         <button
                             type="submit"
