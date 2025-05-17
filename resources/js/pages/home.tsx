@@ -21,6 +21,7 @@ import MentorCard from "@/components/cards/MentorCard"
 import HeroLabels from "@/components/HeroLabels"
 
 export default function Home() {
+    <Head title="Kreavoks | Home" />
     const { auth } = usePage<SharedData>().props
     const { events } = usePage<SharedData & { events: Event[] }>().props
     const { courses } = usePage<SharedData & { courses: Course[] }>().props

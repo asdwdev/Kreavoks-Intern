@@ -7,6 +7,7 @@ import type { Portfolio, SharedData } from "@/types"
 import PortfolioCard from "@/components/cards/PortfolioCard"
 
 export default function Portfolio() {
+    <Head title="Kreavoks | Portfolio" />
     const { auth } = usePage<SharedData>().props
     const { portfolios } = usePage<SharedData & { portfolios: Portfolio[] }>().props || { portfolios: [] }
 

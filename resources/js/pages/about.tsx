@@ -18,6 +18,7 @@ type member = {
 }
 
 export default function About() {
+    <Head title="Kreavoks | About" />
     const { auth } = usePage<SharedData>().props
 
     // Team members data

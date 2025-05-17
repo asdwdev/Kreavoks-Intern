@@ -9,6 +9,7 @@ import EventCard from "@/components/cards/EventCard"
 import { ChevronDown, ChevronLeft, ChevronRight, Search, SlidersHorizontal, X } from "lucide-react"
 
 export default function Program() {
+  <Head title="Kreavoks | Program" />
   const { auth } = usePage<SharedData>().props
   const { events } = usePage<SharedData & { events: Event[] }>().props
   const { courses } = usePage<SharedData & { courses: Course[] }>().props
