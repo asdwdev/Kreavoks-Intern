@@ -16,6 +16,7 @@
         <!-- Box Icons -->
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+        {{-- SEO --}}
         <title inertia>Home | Kreavoks Official </title>
         <meta name="description" content="Kreavoks menyediakan layanan pembuatan Software(Website & Mobile App), E-Course & Workshop pelatihan skill digital, dan desain branding. Kami mendukung bisnis Anda dengan solusi digital yang kreatif dan efektif." />
         <link rel="canonical" href="https://kreavoks.my.id/" />

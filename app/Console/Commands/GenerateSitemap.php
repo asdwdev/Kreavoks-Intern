@@ -14,11 +14,12 @@ class GenerateSitemap extends Command
     public function handle(): void
     {
         Sitemap::create()
-            ->add(Url::create('/'))
-            ->add(Url::create('/about'))
-            ->add(Url::create('/contact'))
+            ->add(Url::create('/'))              
+            ->add(Url::create('/program'))       
+            ->add(Url::create('/portfolio'))     
+            ->add(Url::create('/about'))        
             ->writeToFile(public_path('sitemap.xml'));
 
-        $this->info('Sitemap generated successfully.');
+        $this->info('Sitemap berhasil dibuat di public/sitemap.xml');
     }
 }
