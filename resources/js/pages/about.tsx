@@ -183,7 +183,7 @@ export default function About() {
                             <div>
                                 <h2 className="text-3xl font-bold mb-6">Cerita Kami</h2>
                                 <p className="text-gray-700 mb-4">
-                                    Kreavoks didirikan pada tahun 2018 dengan visi sederhana: membuat teknologi digital lebih mudah
+                                    Kreavoks didirikan pada tahun 2024 dengan visi membuat teknologi digital lebih mudah
                                     diakses dan dipahami oleh semua orang. Kami percaya bahwa transformasi digital seharusnya tidak rumit
                                     dan dapat dimanfaatkan oleh bisnis dari segala ukuran.
                                 </p>
