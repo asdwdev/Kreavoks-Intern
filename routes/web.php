@@ -58,3 +58,29 @@ Route::get('/register', [AuthController::class, 'registerPage'])->name('register
 Route::post('/register', [AuthController::class, 'register']);
 
 Route::post('/logout', [AuthController::class, 'logout']);
+
+
+
+
+// ---------------------------------------------
+// Tutorial: Membuat Halaman Statis Detail Course/Event
+// Tujuan: Menampilkan detail dari 1 course/event secara statis via route dan Inertia
+// ---------------------------------------------
+
+// 1. Pilih salah satu data dari dummyCourse atau dummyEvent
+//    Misalnya:
+//    Course: "Belajar Flutter untuk Pemula"
+//    Slug: "belajar-flutter-untuk-pemula"
+
+// 2. Buat route manual (halaman statis, tidak perlu dinamis dari DB) menggunakan nama kamu + slug
+//    Misalnya:
+//    Route: /adli/belajar-flutter-untuk-pemula
+//
+// 3. Kemudian bikin route get berdasarkan data yang kamu pilih. bisa dilihat pada contoh di bawah ini
+
+Route::get('/adli/belajar-flutter-untuk-pemula', function () {
+    $courses = json_decode(File::get(resource_path('js/data/dummyCourses.json')), true);
+    $course = collect($courses)->firstWhere('slug', 'belajar-flutter-untuk-pemula'); // Ganti sama slug yang kamu pilih
+
+    return Inertia::render('adli', ['course' => $course]);
+});
