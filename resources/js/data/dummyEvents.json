@@ -5,8 +5,12 @@
         "title": "Mastering UI/UX Basics and Career Opportunities",
         "price": 49900,
         "start_date": "2025-04-10",
+        "end_date": "2025-04-10",
+        "time": "19.00 - 21.00 WIB",
+        "mode": "online",
         "status": "inactive",
-        "image": "/images/dummy/events/mastering-uiux.png"
+        "image": "/images/dummy/events/mastering-uiux.png",
+        "description": "Pelajari dasar-dasar UI/UX secara komprehensif dan pahami berbagai peluang karier di dunia desain digital. Workshop ini cocok untuk pemula yang ingin terjun ke dunia desain produk."
     },
     {
         "id": 2,
@@ -14,8 +18,12 @@
         "title": "Laravel & Tailwind: Bangun UI Cepat dan Efisien",
         "price": 59900,
         "start_date": "2025-05-01",
+        "end_date": "2025-05-01",
+        "time": "19.00 - 21.00 WIB",
+        "mode": "online",
         "status": "inactive",
-        "image": "/images/dummy/events/workshop-laravel-tailwind.png"
+        "image": "/images/dummy/events/workshop-laravel-tailwind.png",
+        "description": "Workshop praktis untuk mempelajari cara membangun antarmuka web dengan Laravel dan Tailwind CSS secara efisien. Sangat cocok untuk web developer yang ingin bekerja lebih cepat dan modern."
     },
     {
         "id": 3,
@@ -23,8 +31,12 @@
         "title": "Fullstack Web Dev: Dari Nol Hingga Deploy",
         "price": 149900,
         "start_date": "2025-06-03",
+        "end_date": "2025-06-15",
+        "time": "19.00 - 21.00 WIB",
+        "mode": "online",
         "status": "active",
-        "image": null
+        "image": null,
+        "description": "Bootcamp intensif yang membimbing peserta membangun aplikasi web fullstack dari dasar hingga siap deploy. Materi mencakup HTML, CSS, JavaScript, backend, dan deployment."
     },
     {
         "id": 4,
@@ -32,8 +44,12 @@
         "title": "Backend Engineering Intensive with Node.js",
         "price": 159900,
         "start_date": "2025-06-15",
+        "end_date": "2025-06-27",
+        "time": "19.00 - 21.00 WIB",
+        "mode": "online",
         "status": "active",
-        "image": null
+        "image": null,
+        "description": "Kuasai pengembangan backend menggunakan Node.js dalam bootcamp intensif ini. Pelajari Express.js, REST API, autentikasi, dan praktik terbaik dalam membangun server."
     },
     {
         "id": 5,
@@ -41,8 +57,12 @@
         "title": "Desain Responsif dengan Tailwind CSS",
         "price": 49900,
         "start_date": "2025-07-05",
+        "end_date": "2025-07-05",
+        "time": "19.00 - 21.00 WIB",
+        "mode": "online",
         "status": "active",
-        "image": null
+        "image": null,
+        "description": "Pelajari teknik membuat desain web yang responsif dan modern menggunakan Tailwind CSS. Sangat cocok untuk front-end developer pemula maupun menengah."
     },
     {
         "id": 6,
@@ -50,8 +70,12 @@
         "title": "Ngobrolin Karier sebagai Frontend Engineer",
         "price": 29900,
         "start_date": "2025-07-12",
+        "end_date": "2025-07-12",
+        "time": "19.00 - 21.00 WIB",
+        "mode": "online",
         "status": "active",
-        "image": null
+        "image": null,
+        "description": "Webinar santai membahas perjalanan dan tantangan sebagai frontend engineer di industri teknologi. Dapatkan insight langsung dari praktisi berpengalaman."
     },
     {
         "id": 7,
@@ -59,7 +83,11 @@
         "title": "React + Laravel: Membangun Aplikasi Modern",
         "price": 169900,
         "start_date": "2025-08-01",
+        "end_date": "2025-08-13",
+        "time": "19.00 - 21.00 WIB",
+        "mode": "online",
         "status": "active",
-        "image": null
+        "image": null,
+        "description": "Bootcamp ini akan mengajarkan cara menggabungkan React di frontend dengan Laravel di backend untuk membangun aplikasi modern, lengkap dengan autentikasi dan API."
     }
 ]
